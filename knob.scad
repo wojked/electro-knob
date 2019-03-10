@@ -33,6 +33,7 @@ module handle(height) {
     cube_widht=37;
     union(){
         cylinder(cylinder_height, cylinder_radius, cylinder_radius, true);    
+        rotate([0,0,180])        
         translate([0,cube_widht/2 - cylinder_radius, cylinder_height/2 + cube_depth/2])
         holder(cube_height,cube_widht,cube_depth);
     }
