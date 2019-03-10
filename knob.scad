@@ -2,28 +2,27 @@ fudge = 0.1;
 
 HEIGHT = 31.20;
 OUTSIDE_HEIGHT = 6.20;
+INSERT_HEIGHT = 25;
 OUTSIDE_RADIUS = 9.72/2;
 SCALE = 3.58;
 
 knob(OUTSIDE_HEIGHT, true);
 
-//translate([10,0, 0])
-//insert(OUTSIDE_HEIGHT);
-
 module knob(height, with_outside)
 {
-    union(){
-        difference(){
+    difference(){        
+        union(){
             cylinder(height, OUTSIDE_RADIUS, OUTSIDE_RADIUS, true);
-            insert(height*2);
-        }
-        if (with_outside){
-            translate([0,0,OUTSIDE_HEIGHT])
-            handle(height);
-        }
+            if (with_outside){
+                translate([0,0,OUTSIDE_HEIGHT])
+                handle(height);
+            }
+        };
+        translate([0,0,INSERT_HEIGHT/2 - OUTSIDE_HEIGHT/2-1])
+        insert(INSERT_HEIGHT); 
     }
-    
-    
+//    translate([30,0,INSERT_HEIGHT/2 - OUTSIDE_HEIGHT/2-1])
+//    insert(INSERT_HEIGHT);        
 }
 
 module handle(height) {
@@ -64,3 +63,4 @@ module poly_path3805(h)
       polygon([[2.574961,-2.775765],[-2.574963,-2.775765],[-2.574963,0.720515],[-0.556749,2.775765],[2.574963,2.775765]]);
   }
 }
+    
