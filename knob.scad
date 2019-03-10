@@ -1,4 +1,4 @@
-$fn = 128;
+$fn = 256;
 fudge = 0.1;
 
 HEIGHT = 31.20;
@@ -52,6 +52,7 @@ module holder(cube_height,cube_widht,cube_depth) {
 }
 
 module insert(height){
+    scale([1.15, 1.15, 1])
     scale([SCALE, SCALE, 1])
     translate([0,0,-height/2])
     poly_path3805(height);
