@@ -52,7 +52,7 @@ module holder(cube_height,cube_widht,cube_depth) {
 }
 
 module insert(height){
-    scale([1.15, 1.15, 1])
+    scale([0.98, 0.98, 1.0])
     scale([SCALE, SCALE, 1])
     translate([0,0,-height/2])
     poly_path3805(height);
